@@ -45,6 +45,7 @@ COLUMN_MAP = {
     "t2": ["t2"],
 }
 
+
 def realitycapture_to_json(
     image_filename_map: Dict[str, Path],
     csv_filename: Path,
@@ -151,6 +152,7 @@ def _get_rotation_matrix(yaw, pitch, roll):
     rot_z = np.array([[c_yaw, -s_yaw, 0], [s_yaw, c_yaw, 0], [0, 0, 1]])
 
     return rot_z @ rot_x @ rot_y
+
 
 def _resolve_columns(cameras):
     resolved = {}
